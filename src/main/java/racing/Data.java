@@ -1,10 +1,9 @@
 package racing;
 
-import java.util.Scanner;
-
 public class Data {
 
-    private final int cars;
+    private int cars;
+    private String[] names;
     private final int trials;
 
     public Data(int cars, int trials) {
@@ -12,16 +11,9 @@ public class Data {
         this.trials = trials;
     }
 
-    public static Data userInput() {
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("자동차 대수는 몇 대 인가요?");
-        int cars = scanner.nextInt();
-        System.out.println("시도할 횟수는 몇 회 인가요?");
-        int trials = scanner.nextInt();
-
-        return new Data(cars, trials);
+    public Data(String[] names, int trials) {
+        this.names = names;
+        this.trials = trials;
     }
 
     public int carData() {
@@ -30,5 +22,9 @@ public class Data {
 
     public int trialData() {
         return trials;
+    }
+
+    public String[] nameData() {
+        return names;
     }
 }
